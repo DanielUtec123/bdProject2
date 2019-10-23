@@ -17,18 +17,17 @@ def index():
 def rankedRetrieval():
     return render_template('ranked.html')
 
-@app.route('/do_ranked_search', methods=['POST','GET'])
-def do_login():
+@app.route('/do_ranked_search/<query>', methods=['POST','GET'])
+def get_ranked_results_by_query(query):
     query = request.form['query']
+    return render_template("index.html")
+
+@app.route('/raned/<sala_pin>', methods = ['GET'])
+def get_message_by_pin(sala_pin):
+    print(sala_pin)
+    return render_template("index.html")
 
 
-    for user in users:
-        if user.username == username and user.password == password:
-            session['username'] = username
-            session['password'] = password
-            return render_template("name_sala.html")
-
-    return render_template("fail.html")
 
 
 
