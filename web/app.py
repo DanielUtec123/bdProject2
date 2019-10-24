@@ -1,6 +1,7 @@
 from flask_sqlalchemy import SQLAlchemy
-from flask import Flask, render_template, request, session, Response
+from flask import Flask, render_template, request, session, Response,jsonify
 import json
+import tf_idf
 
 
 from datetime import datetime
@@ -17,15 +18,31 @@ def index():
 def rankedRetrieval():
     return render_template('ranked.html')
 
+#retorna un json con los resultados
 @app.route('/do_ranked_search/<query>', methods=['POST','GET'])
 def get_ranked_results_by_query(query):
-    query = request.form['query']
-    return render_template("index.html")
+    results = []
+    if len(query) > 0:
 
-@app.route('/raned/<sala_pin>', methods = ['GET'])
-def get_message_by_pin(sala_pin):
-    print(sala_pin)
-    return render_template("index.html")
+        token_list = tf_idf.stem_and_tokenize(query)
+        query_vector = tf_idf.input_vector(token_list)
+        tf_idf.tf_idf_query(query_vector)
+        result = tf_idf.query_result(query_vector)
+        f_result = result[:10]
+        for element in f_result:
+            record = {}
+            record['name'] = str(element[0])
+            record['weight'] =str(element[1])
+            results.append(record)
+            print("The DocID " + str(element[0]) + " matches, with weight " + str(element[1]))
+
+
+    print(query)
+    print(results)
+    return jsonify(results)
+
+
+
 
 
 
