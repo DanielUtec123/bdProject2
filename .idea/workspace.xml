@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="c682e77f-21fd-43a9-8269-edbeb1fd3ab1" name="Default Changelist" comment="show results">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/js/main.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/static/js/ranked.js" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/web/TF-IDF.py" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/Proyecto2Original.iml" afterPath="$PROJECT_DIR$/.idea/Proyecto2Original.iml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web/tf_idf.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app.py" afterPath="$PROJECT_DIR$/web/app.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/main.py" afterPath="$PROJECT_DIR$/web/main.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/templates/ranked.html" afterPath="$PROJECT_DIR$/web/templates/ranked.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -246,6 +239,14 @@
       <option name="presentableId" value="Default" />
       <updated>1571865841396</updated>
     </task>
+    <task id="LOCAL-00001" summary="show results">
+      <created>1571881541818</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1571881541818</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TodoView" selected-index="4">
