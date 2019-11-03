@@ -6,18 +6,14 @@ var url_query;
 
 function searchByQuery(){
     query = $('#query').val();
-
-
     url_query = '/do_ranked_search/' + query;
     $('#query').val('')
 
     var e = '';
-
     e = e + '<tr><th>Name</th><th>Score</th></tr>'
 
     $.getJSON(url_query,function(data){
     var i = 0;
-
     $.each(data, function(){
         e = e + '<tr>'
         e = e + '<td>'+data[i]['name']+'</td>'
@@ -27,7 +23,5 @@ function searchByQuery(){
         i = i+1;
     });
     $('#boxResults').html(e);
-
-
     });
 }

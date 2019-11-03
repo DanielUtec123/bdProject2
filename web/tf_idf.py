@@ -6,7 +6,7 @@ from math import log, sqrt
 # default dict se usa para evitar crear una nueva entrada vacia de diccionario cada vez que haya una nueva palabra
 from collections import defaultdict
 # from numpy import unicode
-nltk.download('punkt')
+
 total_doc_count = 10
 inv_index = defaultdict(list)  # Retorna una lista vacia cada vez que se accede a un elemento inexistente
 all_doc_vectors = []  # Cada elemento de la lista es un diccionario, existira un vector para cada documento
@@ -96,9 +96,9 @@ def dot_product(vector_a, vector_b):
 def stem_and_tokenize(doc_text):
     tkn_list = nltk.word_tokenize(doc_text)
     ps = nltk.stem.PorterStemmer()
-    my_result = []
+    my_result = set()
     for word in tkn_list:
-        my_result.append(ps.stem(word))
+        my_result.add(ps.stem(word))
     return my_result
 
 
@@ -120,7 +120,10 @@ def create_vector(the_token_list):
 
 # Lee data de conjunto de archivos en el Conjunto de Datos presente en el mismo directorio que este script
 def doc_string(doc_id):
-    file_text = str(open("Files/"+str(doc_id)).read())
+
+    file_text = str(open("test.json").read())
+
+
     return file_text
 
 
@@ -143,7 +146,7 @@ tf_idf_vectorized()
 # TERMINA EL PREPROCESAMIENTO
 
 # INGRESAR CONSULTA
-
+# INGRESAR CONSULTA
 #
 #
 #

@@ -47,8 +47,5 @@ def get_ranked_results_by_query(query):
 
 
 
-
-
-
 if __name__ == '__main__':
     app.run(debug=True)
